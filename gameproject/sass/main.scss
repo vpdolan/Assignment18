@@ -1,0 +1,23 @@
+@import "bourbon";
+@import "font-awesome";
+
+
+
+ h1 {
+  
+  padding-left: 420px;
+  color: red;
+  font-family: 'Amatic SC', cursive;
+  font-size: 30px;
+}
+
+#beach {
+  background-image: url("http://images.all-free-download.com/images/graphiclarge/beach_background_204114.jpg");
+  //background-repeat: no-repeat;
+  width: 100%;
+  display: inline-block;
+
+}
+img.cannonpointright {
+  padding-right: 250px;
+}
