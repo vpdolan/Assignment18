@@ -2,14 +2,19 @@ import $ from 'jquery';
 import _ from 'underscore';
 import moment from 'moment';
 
+//import ElixirModel from './elixir.model';
+import ElixirsCollection from './elixirs.collection';
+// import ElixirModel from './elixir.model';
+import ElixirTemplate from './elixir.template';
+
 const APP_ID = 'JUHEvllrCLEVNH0Y6Lui2IEghbNgLZsEx0OF4wHk';
 
 const API_KEY = '66UDIAncFf7BN2XCR1dTh7P120X1HXPHXrc1oUGe';
 
 $.ajaxSetup({
   headers: {
-    'x-Parse-Application-Id': APP_ID,
-    'x-Parse=REST-API-Key': API_KEY
+    'X-Parse-Application-Id': APP_ID,
+    'X-Parse-REST-API-Key': API_KEY
 
   }
 
@@ -19,15 +24,13 @@ console.log('Hello, World');
 
 
 
-//import ElixirModel from './elixir.model';
 
-import ElixirsCollection from './elixirs.collection';
-import ElixirTemplate from './elixir.template';
-
-let elixirs = new ElixirsCollection();
+window.elixirs = new ElixirsCollection();
 
 function renderElixirs() {
   //creating an empty dom node
+
+  console.log(elixirs);
 
   let $ul = $('<ul></ul>');
 //iterate each of the models
@@ -43,7 +46,7 @@ function renderElixirs() {
  console.log('templateString', templateString);
 
  //use templateString to create an li dom node     
-    let $li = $( ElixirTemplate(data) );
+    let $li = $(templateString);
 
     $ul.append($li); 
   });
